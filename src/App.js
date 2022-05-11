@@ -1,30 +1,19 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Pages/Shared/Navbar";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Login from "./Pages/Login/Login";
 
 function App() {
   return (
-    <div className="App">
-      <label for="my-modal-3" class="btn modal-button">
-        open modal
-      </label>
-
-      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box relative">
-          <label
-            for="my-modal-3"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
-          >
-            ✕
-          </label>
-          <h3 class="text-lg font-bold">
-            Congratulations random Interner user!
-          </h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-        </div>
-      </div>
+    <div>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
