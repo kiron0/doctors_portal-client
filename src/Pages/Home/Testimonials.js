@@ -29,17 +29,19 @@ const Testimonials = () => {
     },
   ];
   return (
-    <section className="my-40 px-12">
-      <div className="flex justify-between">
-        <div>
-          <h4 className="text-xl text-primary font-bold">Testimonials</h4>
-          <h2 className="text-3xl">What our Patients say</h2>
-        </div>
-        <div>
-          <img src={quote} className="w-24 lg:w-48" alt="" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+		<section className="flex flex-col justify-between px-6 mt-28 container mx-auto">
+			<div className="flex justify-between items-center">
+				<div>
+					<p className="text-secondary text-xl">Testimonial</p>
+					<p className="text-4xl text-accent font-bold">
+						What our patients say
+					</p>
+				</div>
+				<div>
+					<img className="w-[98px] lg:w-[192px]" src={quote} alt="" />
+				</div>
+			</div>
+			<div className="grid grid-cols-1 lg:grid-cols-3 mt-20 gap-y-12  justify-items-center ">
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}

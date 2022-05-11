@@ -7,7 +7,7 @@ const Exceptional = () => {
       <div class="hero-content flex-col lg:flex-row gap-20">
         <img
           src={treatment}
-          class="max-w-sm rounded-lg shadow-2xl"
+          class="max-w-xs lg:max-w-lg rounded-lg shadow-2xl"
           alt="treatment"
         />
         <div>

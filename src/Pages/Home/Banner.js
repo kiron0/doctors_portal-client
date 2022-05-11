@@ -1,30 +1,31 @@
 import React from "react";
 import chair from "../../Assets/images/chair.png";
+import BannerBg from "../../Assets/images/bg.png";
 import PrimaryButton from "../Shared/PrimaryButton";
-import bannerbg from "../../Assets/images/bg.png";
 
 const Banner = () => {
   return (
-    <div
-      className="hero min-h-screen px-12"
-      style={{
-        background: `url(${bannerbg})`,
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="hero-content flex-col lg:flex-row-reverse ">
-        <img src={chair} className="max-w-sm rounded-lg shadow-2xl" alt="" />
-        <div>
-          <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <PrimaryButton>Get Started</PrimaryButton>
+    <section>
+      <div
+        className="hero min-h-screen bg-cover bg-center bg-blend-overlay pt-[100px`]"
+        style={{
+          background: `url(${BannerBg})`,
+        }}
+      >
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <img src={chair} class={`lg:max-w-lg max-w-xs rounded-lg`} alt="" />
+          <div>
+            <h1 class="text-5xl font-bold">Your New Smile Starts Here</h1>
+            <p class="py-6">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the
+            </p>
+            <PrimaryButton>Get Started</PrimaryButton>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

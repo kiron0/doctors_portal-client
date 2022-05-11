@@ -10,7 +10,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/"
         >
@@ -20,7 +20,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/about"
         >
@@ -30,7 +30,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/appointment"
         >
@@ -40,7 +40,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/reviews"
         >
@@ -50,7 +50,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/contact-us"
         >
@@ -60,7 +60,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <button
           onClick={handleThemeChange}
-          className="rounded-xl lg:mx-2 font-bold"
+          className="rounded-xl lg:mx-2 font-bold text-black"
         >
           {theme ? <FaMoon /> : <FaSun />}
         </button>
@@ -68,7 +68,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2"
+            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
           }
           to="/login"
         >
@@ -81,7 +81,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
     <section className="flex justify-center">
       <div className="fixed top-0 w-full z-50">
         <input type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col h-[64px] backdrop-blur-[18px] bg-gray-400/80">
+        <div className="drawer-content flex flex-col h-[64px] backdrop-blur-[18px] bg-gray-200/80">
           <div className="w-full navbar container  mx-auto">
             <div className="flex-none lg:hidden">
               <label
@@ -89,11 +89,11 @@ const Navbar = ({ handleThemeChange, theme }) => {
                 className="btn btn-ghost"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                <CgMenuLeft className="text-2xl"></CgMenuLeft>
+                <CgMenuLeft className="text-2xl text-black"></CgMenuLeft>
               </label>
             </div>
             <div className="flex-1 px-2 mx-2">
-              <p className="font-bold text-center lg:text-left lg:w-auto w-full text-2xl">
+              <p className="font-bold text-center lg:text-left lg:w-auto w-full text-2xl text-black">
                 Doctors Portal
               </p>
             </div>
@@ -108,7 +108,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           }`}
         >
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 font-bold h-screen  backdrop-blur-[18px] bg-gray-400/80">
+          <ul className="menu p-4 overflow-y-auto w-80 font-bold h-screen  backdrop-blur-[18px] bg-gray-100/80">
             {navItems}
           </ul>
         </div>

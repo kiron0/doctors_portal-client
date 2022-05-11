@@ -13,20 +13,28 @@ const MakeAppointment = () => {
       }}
       className="flex justify-center items-center"
     >
-      <div className="flex-1 hidden lg:block">
-        <img className="mt-[-170px]" src={doctor} alt="" />
-      </div>
-      <div className="flex-1">
-        <h3 className="text-xl text-primary font-bold">Appointment</h3>
-        <h2 className="text-3xl text-white">Make an Appointment Today</h2>
-        <p className="text-white">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-          earum ab cupiditate autem accusantium expedita sequi, temporibus, aut
-          illo doloribus quaerat explicabo, assumenda consectetur est vel ad sed
-          maiores doloremque consequatur. Amet consequuntur quibusdam autem,
-          quod maxime qui itaque quaerat.
-        </p>
+      <div className=" flex flex-col lg:flex-row justify-center items-center px-6 mx-auto container">
+				<div className="flex-1 hidden lg:flex justify-end items-end">
+					<img
+						className="mt-[-100px] max-w-lg"
+						src={doctor}
+						alt=""
+					/>
+				</div>
+				<div className="flex-1 flex flex-col justify-center py-8 items-start">
+					<p className="text-secondary text-xl font-bold">Appointment</p>
+					<p className="text-4xl text-white font-bold">Make an appointment Today</p>
+					<p className="text-white mb-4">
+						It is a long established fact that a reader will be
+						distracted by the readable content of a page when
+						looking at its layout. The point of using Lorem Ipsumis
+						that it has a more-or-less normal distribution of
+						letters,as opposed to using 'Content here, content
+						here', making it look like readable English. Many
+						desktop publishing packages and web page
+					</p>
         <PrimaryButton>Get Started</PrimaryButton>
+        </div>
       </div>
     </section>
   );
