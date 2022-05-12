@@ -29,7 +29,7 @@ const Testimonials = () => {
     },
   ];
   return (
-		<section className="flex flex-col justify-between px-6 mt-28 container mx-auto mb-20">
+		<section className="flex flex-col justify-between px-6 mt-28 container mx-auto mb-36">
 			<div className="flex justify-between items-center">
 				<div>
 					<p className="text-secondary text-xl">Testimonial</p>

@@ -1,0 +1,11 @@
+.custom {
+  background: url("../../Assets/images/bg.png") no-repeat center center;
+  background-size: "cover";
+  width: "100%";
+}
+
+@media screen and (max-width: 490px) {
+  .custom {
+    background: none;
+  }
+}

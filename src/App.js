@@ -8,6 +8,8 @@ import Appointment from "./Pages/Appointment/Appointment";
 import { useEffect, useState } from "react";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import SignUp from "./Pages/Login/SignUp";
+import NotFound from "./Pages/Shared/NotFound";
+import Contact from "./Pages/Home/Contact";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -29,8 +31,10 @@ function App() {
             <Appointment />
           </RequireAuth>
         } />
+        <Route path="contact-us" element={<Contact/>} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
   );
