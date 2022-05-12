@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
-import {CgMenuLeft} from 'react-icons/cg';
+import { CgMenuLeft } from "react-icons/cg";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+import auth from "./firebase.init";
 
 const Navbar = ({ handleThemeChange, theme }) => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const navItems = (
     <>
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
+            isActive
+              ? "bg-accent text-white rounded-xl"
+              : "rounded-xl lg:mx-2 text-black"
           }
           to="/"
         >
@@ -20,7 +30,9 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
+            isActive
+              ? "bg-accent text-white rounded-xl"
+              : "rounded-xl lg:mx-2 text-black"
           }
           to="/about"
         >
@@ -30,7 +42,9 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
+            isActive
+              ? "bg-accent text-white rounded-xl"
+              : "rounded-xl lg:mx-2 text-black"
           }
           to="/appointment"
         >
@@ -40,7 +54,9 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
+            isActive
+              ? "bg-accent text-white rounded-xl"
+              : "rounded-xl lg:mx-2 text-black"
           }
           to="/reviews"
         >
@@ -50,7 +66,9 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
+            isActive
+              ? "bg-accent text-white rounded-xl"
+              : "rounded-xl lg:mx-2 text-black"
           }
           to="/contact-us"
         >
@@ -66,14 +84,22 @@ const Navbar = ({ handleThemeChange, theme }) => {
         </button>
       </li>
       <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "bg-accent text-white rounded-xl" : "rounded-xl lg:mx-2 text-black"
-          }
-          to="/login"
-        >
-          Login
-        </NavLink>
+        {user?.email ? (
+          <button className="btn btn-ghost bg-accent text-white rounded-xl hover:border-solid hover:border-2 hover:border-accent hover:text-black" onClick={logout}>
+            Sign Out
+          </button>
+        ) : (
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "bg-accent text-white rounded-xl"
+                : "rounded-xl lg:mx-2 text-black"
+            }
+            to="/login"
+          >
+            Login
+          </NavLink>
+        )}
       </li>
     </>
   );
