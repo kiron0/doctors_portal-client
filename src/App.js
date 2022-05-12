@@ -21,7 +21,7 @@ function App() {
 		window.localStorage.setItem("theme",!theme)
 	}
   return (
-    <div className="" data-theme={theme && "dark"}>
+    <div className="" data-theme={theme && "night"}>
       <Navbar handleThemeChange={handleThemeChange} theme={theme} ></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />

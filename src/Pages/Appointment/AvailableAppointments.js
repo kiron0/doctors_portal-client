@@ -14,7 +14,7 @@ const AvailableAppointments = ({ date }) => {
   }, []);
 
   return (
-    <div className="my-10">
+    <div className="my-10 px-6 lg:px-12">
       <h4 className="text-xl text-secondary text-center my-12">
         Available Appointments on {format(date, "PP")}
       </h4>

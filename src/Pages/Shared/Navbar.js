@@ -28,7 +28,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           className={({ isActive }) =>
             isActive
               ? "bg-accent text-white rounded-xl"
-              : "rounded-xl lg:mx-2 text-black"
+              : "rounded-xl lg:mx-2"
           }
           to="/"
         >
@@ -40,7 +40,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           className={({ isActive }) =>
             isActive
               ? "bg-accent text-white rounded-xl"
-              : "rounded-xl lg:mx-2 text-black"
+              : "rounded-xl lg:mx-2"
           }
           to="/about"
         >
@@ -52,7 +52,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           className={({ isActive }) =>
             isActive
               ? "bg-accent text-white rounded-xl"
-              : "rounded-xl lg:mx-2 text-black"
+              : "rounded-xl lg:mx-2"
           }
           to="/appointment"
         >
@@ -64,7 +64,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           className={({ isActive }) =>
             isActive
               ? "bg-accent text-white rounded-xl"
-              : "rounded-xl lg:mx-2 text-black"
+              : "rounded-xl lg:mx-2"
           }
           to="/reviews"
         >
@@ -76,7 +76,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
           className={({ isActive }) =>
             isActive
               ? "bg-accent text-white rounded-xl"
-              : "rounded-xl lg:mx-2 text-black"
+              : "rounded-xl lg:mx-2"
           }
           to="/contact-us"
         >
@@ -86,7 +86,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <li>
         <button
           onClick={handleThemeChange}
-          className="rounded-xl lg:mx-2 font-bold text-black"
+          className="rounded-xl lg:mx-2 font-bold"
         >
           {theme ? <FaMoon /> : <FaSun />}
         </button>
@@ -104,7 +104,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
             className={({ isActive }) =>
               isActive
                 ? "bg-accent text-white rounded-xl"
-                : "rounded-xl lg:mx-2 text-black"
+                : "rounded-xl lg:mx-2"
             }
             to="/login"
           >
@@ -119,7 +119,7 @@ const Navbar = ({ handleThemeChange, theme }) => {
       <div className="fixed top-0 w-full z-50">
         <input type="checkbox" className="drawer-toggle" />
         <div
-          className={`drawer-content flex flex-col h-[64px] backdrop-blur-[18px] bg-gray-100/60  ${
+          className={`drawer-content flex flex-col h-[64px] backdrop-blur-[18px] bg-base-800/60  ${
             scrollY < 300 && "lg:bg-transparent"
           }`}
         >
@@ -130,12 +130,14 @@ const Navbar = ({ handleThemeChange, theme }) => {
                 className="btn btn-ghost"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                <CgMenuLeft className="text-2xl text-black"></CgMenuLeft>
+                <CgMenuLeft className="text-2xl "></CgMenuLeft>
               </label>
             </div>
             <div className="flex-1 px-0 mx-3">
-              <p className="font-bold ml-10 md:ml-64 lg:text-left lg:w-auto w-full text-2xl text-black">
+              <p className="font-bold ml-10 md:ml-64 lg:text-left lg:w-auto w-full text-2xl ">
+                <NavLink to="/">
                 Doctors Portal
+                </NavLink>
               </p>
             </div>
             <div className="flex-none hidden lg:block">
@@ -145,11 +147,11 @@ const Navbar = ({ handleThemeChange, theme }) => {
         </div>
         <div
           className={`absolute duration-300 ease-linear ${
-            menuOpen ? "left-0" : "left-[-100vh]"
+            menuOpen ? "left-0" : "left-[-100vw]"
           }`}
         >
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 font-bold h-screen  backdrop-blur-[18px] bg-gray-100/80">
+          <ul className="menu p-4 overflow-y-auto w-80 font-bold h-screen  backdrop-blur-[18px] bg-base-100/80">
             {navItems}
           </ul>
         </div>
