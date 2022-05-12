@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../Shared/firebase.init";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -134,9 +135,9 @@ const Login = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-outline"
+            className="btn btn-outline flex items-center content-center"
           >
-            Continue with Google
+            <FcGoogle className="text-2xl mr-2"></FcGoogle>Continue with Google
           </button>
         </div>
       </div>
