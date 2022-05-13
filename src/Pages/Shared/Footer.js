@@ -11,28 +11,28 @@ const Footer = () => {
         backgroundPosition: "center",
         width: '100%',
       }}
-      className="p-10 py-14 px-12"
+      className="py-14 px-6 lg:px-12 mx-auto"
     >
-      <div className="footer">
+      <div className="footer mx-auto">
         <div>
           <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a href="/" className="link link-hover">Branding</a>
+          <a href="/" className="link link-hover">Design</a>
+          <a href="/" className="link link-hover">Marketing</a>
+          <a href="/" className="link link-hover">Advertisement</a>
         </div>
         <div>
           <span className="footer-title">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a href="/" className="link link-hover">About us</a>
+          <a href="/" className="link link-hover">Contact</a>
+          <a href="/" className="link link-hover">Jobs</a>
+          <a href="/" className="link link-hover">Press kit</a>
         </div>
         <div>
           <span className="footer-title">Legal</span>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <a href="/" className="link link-hover">Terms of use</a>
+          <a href="/" className="link link-hover">Privacy policy</a>
+          <a href="/" className="link link-hover">Cookie policy</a>
         </div>
       </div>
       <div className="my-10 text-center">

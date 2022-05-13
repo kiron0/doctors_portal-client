@@ -1,21 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PrimaryButton from "./PrimaryButton";
 
 const NotFound = () => {
   return (
     <div className="flex h-screen justify-center items-center text-center">
-      <div className="w-[80%] md:w-[50%] lg:w-[30%] shadow-xl">
-        <div className="card-body">
-          <h2 className="text-7xl lg:text-9xl font-bold text-purple-400">404!</h2>
-          <h3 className="text-2xl lg:text-6xl font-medium py-8">Oops! Page not found</h3>
-          <p className="text-2xl pb-8 lg:px-12 font-medium">
-            Oops! The page you are looking for does not exist. It might have
-            been moved or deleted.
-          </p>
-          <div className="flex justify-center">
-            <button className="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white btn btn-primary font-semibold px-6 py-3 rounded-md mr-6"><Link to="/">Home</Link></button>
-
-            <button className="bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-500 text-white btn btn-secondary font-semibold px-6 py-3 rounded-md"><Link to="/">Contact Us</Link></button>
+      <div className="flex items-center justify-center py-12 px-2 mx-auto lg:px-0">
+        <div className="bg-base-100 shadow-xl items-center justify-center mx-4 md:w-2/3 rounded-lg">
+          <div className="flex flex-col items-center py-16 lg:px-32 md:px-32">
+            <img
+              className="px-4 hidden md:block"
+              src="https://i.ibb.co/9Vs73RF/undraw-page-not-found-su7k-1-3.png"
+              alt=""
+            />
+            <img
+              className="md:hidden"
+              src="https://i.ibb.co/RgYQvV7/undraw-page-not-found-su7k-1.png"
+              alt=""
+            />
+            <h1 className="px-4 pt-8 pb-4 text-center  text-5xl font-bold leading-10">
+              OOPS!
+            </h1>
+            <p className="px-4 pb-10 text-base leading-none text-center">
+              No signal here! we cannot find the page you are looking for
+            </p>
+            <PrimaryButton>
+              <Link to="/" className="text-white no-underline">
+                Go Home
+              </Link>
+            </PrimaryButton>
           </div>
         </div>
       </div>

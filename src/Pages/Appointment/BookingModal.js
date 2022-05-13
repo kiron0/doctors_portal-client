@@ -1,7 +1,7 @@
 import React from "react";
 import { format } from "date-fns";
 
-const BookingModal = ({ date, treatment, setTreatment }) => {
+const BookingModal = ({ date, treatment, setTreatment, user }) => {
   const { _id, name, slots } = treatment;
 
   const handleBooking = (event) => {
@@ -45,12 +45,16 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
               name="name"
               placeholder="Your Name"
               class="input input-bordered w-full max-w-xs"
+              defaultValue={user?.displayName}
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
               class="input input-bordered w-full max-w-xs"
+              defaultValue={user?.email}
+              readOnly
+              disabled
             />
             <input
               type="text"

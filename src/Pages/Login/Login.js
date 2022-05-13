@@ -8,6 +8,7 @@ import Loading from "../Shared/Loading";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../Shared/firebase.init";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -27,6 +28,9 @@ const Login = () => {
   useEffect(() => {
     if (user || gUser) {
       navigate(from, { replace: true });
+      toast.success("Welcome back", {
+        autoClose: 4000,
+      });
     }
   }, [user, gUser, from, navigate]);
 
@@ -58,6 +62,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
                 {...register("email", {
@@ -103,6 +108,9 @@ const Login = () => {
                   },
                 })}
               />
+              <Link to="/reset-password" className="text-xs text-secondary py-2">
+                Forget password ?
+              </Link>
               <label className="label">
                 {errors.password?.type === "required" && (
                   <span className="label-text-alt text-red-500">

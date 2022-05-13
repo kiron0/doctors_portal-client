@@ -9,6 +9,7 @@ import Loading from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../Shared/firebase.init";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-hot-toast";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -41,7 +42,8 @@ const SignUp = () => {
   }
 
   if (user || gUser) {
-    console.log(user || gUser);
+    navigate("/", { replace: true });
+    toast.success('Register successfully');
   }
 
   const onSubmit = async (data) => {
