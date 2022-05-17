@@ -9,6 +9,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../Shared/firebase.init";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-hot-toast";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -19,6 +20,8 @@ const Login = () => {
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [token] = useToken(user || gUser);
 
   let signInError;
   const navigate = useNavigate();
@@ -32,7 +35,7 @@ const Login = () => {
         autoClose: 4000,
       });
     }
-  }, [user, gUser, from, navigate]);
+  }, [token, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;
@@ -108,7 +111,10 @@ const Login = () => {
                   },
                 })}
               />
-              <Link to="/reset-password" className="text-xs text-secondary py-2">
+              <Link
+                to="/reset-password"
+                className="text-xs text-secondary py-2"
+              >
                 Forget password ?
               </Link>
               <label className="label">

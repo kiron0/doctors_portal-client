@@ -6,7 +6,7 @@ const InfoCard = ({ img, cardTitle, bgClass }) => {
       <figure className="w-[86px]">
         <img src={img} alt="Album" />
       </figure>
-      <div class="py-2 lg:py-14 px-6">
+      <div className="py-2 lg:py-14 px-6">
         <h2 className="card-title">{cardTitle}</h2>
         <p>Click the button to listen on Spotify app.</p>
       </div>

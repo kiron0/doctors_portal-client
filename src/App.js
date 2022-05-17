@@ -15,6 +15,15 @@ import { css } from "@emotion/react";
 import HashLoader from "react-spinners/HashLoader";
 import { Toaster } from "react-hot-toast";
 import ResetPassword from "./Pages/Login/ResetPassword";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import MyAppointments from "./Pages/Dashboard/MyAppointments";
+import MyHistory from "./Pages/Dashboard/MyHistory";
+import MyReview from "./Pages/Dashboard/MyReview";
+import RequireAdmin from "./Pages/Login/RequireAdmin";
+import Users from "./Pages/Dashboard/Users";
+import AddDoctor from "./Pages/Dashboard/AddDoctor";
+import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
+import Payment from "./Pages/Dashboard/Payment";
 
 const override = css`
   display: flex;
@@ -67,9 +76,46 @@ function App() {
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="reviews" element={<Reviews />} />
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyAppointments></MyAppointments>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="history" element={<MyHistory></MyHistory>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addDoctor"
+            element={
+              <RequireAdmin>
+                <AddDoctor></AddDoctor>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageDoctor"
+            element={
+              <RequireAdmin>
+                <ManageDoctors></ManageDoctors>
+              </RequireAdmin>
+            }
+          ></Route>
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 }

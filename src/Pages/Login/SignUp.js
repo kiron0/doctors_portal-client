@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../Shared/firebase.init";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-hot-toast";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -22,7 +23,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  const [token] = useToken(user || gUser);
   const navigate = useNavigate();
 
   let signInError;
@@ -41,16 +42,15 @@ const SignUp = () => {
     );
   }
 
-  if (user || gUser) {
-    navigate("/", { replace: true });
-    toast.success('Register successfully');
+  if (token) {
+    navigate("/appointment");
+    toast.success("Register successfully");
   }
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     console.log("update done");
-    navigate("/appointment");
   };
   return (
     <div className="flex h-screen justify-center items-center px-4 lg:px-12">
